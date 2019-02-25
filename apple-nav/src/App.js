@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DummyData from './data';
 import './App.css';
 import { Route } from 'react-router-dom';
-import MainNav from './Components/MainNav'
+import NavWrapper from './Components/NavWrapper'
 
 class App extends Component {
 	state = {
@@ -14,8 +14,9 @@ class App extends Component {
 		return (
          <div>
             <Route path='/' render={
-               props => <MainNav {...props} data={this.state.data}/>
+               props => <NavWrapper {...props} data={this.state.data}/>
             }/>
+
          </div>
       );
 	}

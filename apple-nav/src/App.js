@@ -2,23 +2,24 @@ import React, { Component } from 'react';
 import DummyData from './data';
 import './App.css';
 import { Route } from 'react-router-dom';
-import NavWrapper from './Components/NavWrapper'
+import NavWrapper from './Components/NavWrapper';
 
 class App extends Component {
 	state = {
-		data: DummyData
+		data: []
 	};
+
+	componentDidMount() {
+		this.setState({ data: DummyData });
+	}
 
 	render() {
 		//console.log(this.state.data);
 		return (
-         <div>
-            <Route path='/' render={
-               props => <NavWrapper {...props} data={this.state.data}/>
-            }/>
-
-         </div>
-      );
+			<div>
+				<Route path="/" render={(props) => <NavWrapper {...props} data={this.state.data} />} />
+			</div>
+		);
 	}
 }
 
